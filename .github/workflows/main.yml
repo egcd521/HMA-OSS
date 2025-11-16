@@ -2,7 +2,7 @@ name: Main
 
 on:
   push:
-    branches: [ master ]
+    branches: [ updates ]
     paths-ignore:
       - '.github/ISSUE_TEMPLATE/**'
       - '.github/workflows/issue.yml'
@@ -107,7 +107,7 @@ jobs:
           tag_name: oss-${{ steps.buildAll.outputs.ossNum }}
 
       - name: Post to channel
-        if: ${{ github.event_name != 'pull_request' && success() && github.ref == 'refs/heads/master' }}
+        if: ${{ github.event_name != 'pull_request' && success() && github.ref == 'refs/heads/updates' }}
         env:
           CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL }}
           BOT_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}

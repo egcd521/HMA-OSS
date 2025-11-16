@@ -108,10 +108,6 @@ afterEvaluate {
 android {
     namespace = appPackageName
 
-defaultConfig {
-applicationId = “com.hicorenational.antifraud”
-    }
-
     buildFeatures {
         buildConfig = true
         viewBinding = true
